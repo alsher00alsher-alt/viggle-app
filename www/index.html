@@ -15,6 +15,8 @@
 </style>
 </head>
 <body class="bg-[#0f172a]">
+
+    <!-- Header -->
     <header class="p-4 glass-panel flex justify-between items-center z-10 shadow-lg">
         <div>
             <h1 class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">Ahmed Viggle Pro</h1>
@@ -24,24 +26,44 @@
             <button onclick="showProfile()" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition">
                 <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
             </button>
+            <button onclick="openSettings()" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition">
+                <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </button>
         </div>
     </header>
 
+    <!-- Main Content -->
     <main id="main-content" class="flex-1 overflow-y-auto p-4 space-y-4 pb-24">
+        
+        <!-- Banners -->
         <div class="grid grid-cols-1 gap-3">
-            <a href="#" onclick="promptTask('h3-text', 'فيديو من نص')" class="block bg-gradient-to-r from-purple-600 to-pink-500 p-4 rounded-xl shadow-lg relative overflow-hidden active:scale-95 transition-transform">
-                <h2 class="text-lg font-bold mb-1">🎬 فيديو من نص</h2>
-                <p class="text-xs opacity-90">توليد فيديو من وصف نصي</p>
+            <a href="#" onclick="promptTask('h3-text', 'فيديو من نص')" class="block bg-gradient-to-r from-purple-600 to-pink-500 p-5 rounded-2xl shadow-lg relative overflow-hidden active:scale-95 transition-transform">
+                <div class="relative z-10">
+                    <h2 class="text-xl font-bold mb-1">فيديو من نص</h2>
+                    <p class="text-sm opacity-90">توليد فيديو من وصف نصي</p>
+                </div>
+                <div class="absolute -left-4 -bottom-4 opacity-20">
+                    <svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path><rect x="2" y="6" width="14" height="12" rx="2"></rect></svg>
+                </div>
             </a>
-            <a href="#" onclick="promptTask('h3-first', 'فيديو من صورة')" class="block bg-gradient-to-r from-emerald-500 to-blue-500 p-4 rounded-xl shadow-lg relative overflow-hidden active:scale-95 transition-transform">
-                <h2 class="text-lg font-bold mb-1">🖼️ فيديو من صورة</h2>
-                <p class="text-xs opacity-90">توليد فيديو من إطار أول</p>
+
+            <a href="#" onclick="promptTask('h3-first', 'فيديو من صورة')" class="block bg-gradient-to-r from-emerald-500 to-blue-500 p-5 rounded-2xl shadow-lg relative overflow-hidden active:scale-95 transition-transform">
+                <div class="relative z-10">
+                    <h2 class="text-xl font-bold mb-1">فيديو من صورة</h2>
+                    <p class="text-sm opacity-90">توليد فيديو من إطار أول</p>
+                </div>
+                <div class="absolute -left-4 -bottom-4 opacity-20">
+                    <svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>
+                </div>
             </a>
         </div>
+
+        <!-- Services Grid -->
         <h3 class="text-sm font-bold text-gray-400 mt-4 mb-2">جميع الخدمات (21)</h3>
         <div class="grid grid-cols-3 gap-2" id="services-grid"></div>
     </main>
 
+    <!-- Profile Page -->
     <div id="profile-page" class="fixed inset-0 bg-[#0f172a] z-40 hidden flex-col">
         <header class="p-4 glass-panel flex items-center gap-3">
             <button onclick="hideProfile()" class="p-2 bg-gray-800 rounded-lg text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg></button>
@@ -50,6 +72,29 @@
         <main class="flex-1 overflow-y-auto p-4 space-y-3" id="tasks-list"></main>
     </div>
 
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-[#1e293b] rounded-2xl w-full max-w-sm p-6 border border-gray-700">
+            <h3 class="text-lg font-bold text-white mb-4">الإعدادات</h3>
+            
+            <label class="text-sm text-gray-400 block mb-2">Viggle API Key</label>
+            <input type="password" id="api-key-input" class="w-full bg-[#0f172a] border border-gray-700 rounded-lg p-3 text-white mb-4 outline-none focus:border-purple-500" placeholder="sk-..." dir="ltr">
+            
+            <div class="flex gap-2 mb-4">
+                <button onclick="checkBalance()" class="flex-1 bg-blue-600 text-white py-2 rounded-lg font-bold">فحص الرصيد</button>
+                <span id="balance-display" class="flex-1 bg-gray-800 text-center py-2 rounded-lg text-sm flex items-center justify-center">جاري الفحص...</span>
+            </div>
+
+            <a href="https://vercel.com/dashboard" target="_blank" class="block w-full text-center bg-gray-700 text-white py-2 rounded-lg font-bold mb-4 hover:bg-gray-600">لوحة تحكم Vercel</a>
+
+            <div class="flex gap-2">
+                <button onclick="saveSettings()" class="flex-1 bg-purple-600 text-white py-2 rounded-lg font-bold">حفظ</button>
+                <button onclick="closeSettings()" class="flex-1 bg-gray-700 text-white py-2 rounded-lg">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task Input Modal -->
     <div id="input-modal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-[#1e293b] rounded-2xl w-full max-w-sm p-6 border border-gray-700">
             <h3 class="text-lg font-bold text-white mb-4" id="input-title">جاري التحميل...</h3>
@@ -61,6 +106,7 @@
         </div>
     </div>
 
+    <!-- Download Modal -->
     <div id="download-modal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-[#1e293b] rounded-2xl w-full max-w-sm p-6 shadow-2xl border border-gray-700">
             <div class="flex justify-between items-center mb-4">
@@ -74,37 +120,87 @@
     </div>
 
     <script>
-        let API_KEY = localStorage.getItem('viggle_api_key') || 'sk-F9fAhJIaljhw2qaSLGQcQPD11NZOPQqew5eDdIcl6XKDV';
+        let API_KEY = localStorage.getItem('viggle_api_key') || '';
         const API_BASE = 'https://apis.viggle.ai/v1';
         let currentTask = null;
+
         const services = [
-            { id: 'mix', title: 'Video Remix', icon: '🎬', endpoint: 'mixes' },
-            { id: 'editor', title: 'Editor', icon: '✂️', endpoint: 'edits' },
-            { id: 'mic', title: 'Mic', icon: '🎤', endpoint: 'mics' },
-            { id: 'rap', title: 'Rap', icon: '🎵', endpoint: 'raps' },
-            { id: 'live', title: 'Live', icon: '📹', endpoint: 'lives' },
-            { id: 'looklab', title: 'Look Lab', icon: '✨', endpoint: 'looks' },
-            { id: 'char-2d', title: 'Character 2D', icon: '👤', endpoint: 'characters/2d' },
-            { id: 'char-3d', title: 'Character 3D', icon: '🧊', endpoint: 'characters/3d' },
-            { id: 'motion-2d', title: 'Motion 2D', icon: '💃', endpoint: 'motions/2d' },
-            { id: 'motion-3d', title: 'Motion 3D', icon: '🕺', endpoint: 'motions/3d' },
-            { id: 'text-motion', title: 'Text to Motion', icon: '🔤', endpoint: 'motions/text' },
-            { id: 'import-motion', title: 'Import Motion', icon: '📄', endpoint: 'motions/import' },
-            { id: 'h3-text', title: 'H3 Video (Text)', icon: '📝', endpoint: 'videos' },
-            { id: 'h3-first', title: 'H3 (First Frame)', icon: '🖼️', endpoint: 'videos' },
-            { id: 'h3-first-last', title: 'H3 (First+Last)', icon: '🎞️', endpoint: 'videos' },
-            { id: 'h3-reference', title: 'H3 (Reference)', icon: '🔗', endpoint: 'videos' },
-            { id: 'animate', title: 'Viggle Animate', icon: '🏃', endpoint: 'animates' },
-            { id: 'viggle-image', title: 'Viggle Image', icon: '🎨', endpoint: 'images' },
-            { id: 'scene-pano', title: 'Scene Pano', icon: '🌍', endpoint: 'scenes/pano' },
-            { id: 'scene-custom', title: 'Scene Custom', icon: '🏞️', endpoint: 'scenes/custom' },
-            { id: 'upscale', title: 'Upscale', icon: '🔍', endpoint: 'upscales' }
+            { id: 'mix', title: 'Video Remix', icon: '🎬', endpoint: 'mixes', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path><rect x="2" y="6" width="14" height="12" rx="2"></rect></svg>' },
+            { id: 'editor', title: 'Editor', icon: '✂️', endpoint: 'edits', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"></circle><path d="M8.12 8.12 12 12"></path><path d="M20 4 8.12 15.88"></path><circle cx="6" cy="18" r="3"></circle><path d="M14.8 14.8 20 20"></path></svg>' },
+            { id: 'mic', title: 'Mic', icon: '🎤', endpoint: 'mics', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="22"></line></svg>' },
+            { id: 'rap', title: 'Rap', icon: '🎵', endpoint: 'raps', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>' },
+            { id: 'live', title: 'Live', icon: '📹', endpoint: 'lives', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>' },
+            { id: 'looklab', title: 'Look Lab', icon: '✨', endpoint: 'looks', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg>' },
+            { id: 'char-2d', title: 'Character 2D', icon: '👤', endpoint: 'characters/2d', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>' },
+            { id: 'char-3d', title: 'Character 3D', icon: '🧊', endpoint: 'characters/3d', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="m21.12 6.4-6.05-4.06a2 2 0 0 0-2.17-.05L2.95 8.41a2 2 0 0 0-.95 1.7v5.82a2 2 0 0 0 .88 1.66l6.05 4.07a2 2 0 0 0 2.17.05l9.95-6.12a2 2 0 0 0 .95-1.7V8.06a2 2 0 0 0-.88-1.66Z"></path><path d="M10 22v-8L2.25 9.15"></path><path d="m10 14 11.77-6.87"></path></svg>' },
+            { id: 'motion-2d', title: 'Motion 2D', icon: '💃', endpoint: 'motions/2d', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.8 19.6A2 2 0 1 0 14 16H2"></path><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"></path><path d="M9.8 4.4A2 2 0 1 1 11 8H2"></path></svg>' },
+            { id: 'motion-3d', title: 'Motion 3D', icon: '🕺', endpoint: 'motions/3d', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>' },
+            { id: 'text-motion', title: 'Text to Motion', icon: '🔤', endpoint: 'motions/text', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" x2="15" y1="20" y2="20"></line><line x1="12" x2="12" y1="4" y2="20"></line></svg>' },
+            { id: 'import-motion', title: 'Import Motion', icon: '📄', endpoint: 'motions/import', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>' },
+            { id: 'h3-text', title: 'H3 Video (Text)', icon: '📝', endpoint: 'videos', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path><rect x="2" y="6" width="14" height="12" rx="2"></rect></svg>' },
+            { id: 'h3-first', title: 'H3 (First Frame)', icon: '🖼️', endpoint: 'videos', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>' },
+            { id: 'h3-first-last', title: 'H3 (First+Last)', icon: '🎞️', endpoint: 'videos', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path><rect x="2" y="6" width="14" height="12" rx="2"></rect></svg>' },
+            { id: 'h3-reference', title: 'H3 (Reference)', icon: '🔗', endpoint: 'videos', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path><rect x="2" y="6" width="14" height="12" rx="2"></rect></svg>' },
+            { id: 'animate', title: 'Viggle Animate', icon: '🏃', endpoint: 'animates', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>' },
+            { id: 'viggle-image', title: 'Viggle Image', icon: '🎨', endpoint: 'images', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>' },
+            { id: 'scene-pano', title: 'Scene Pano', icon: '🌍', endpoint: 'scenes/pano', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>' },
+            { id: 'scene-custom', title: 'Scene Custom', icon: '🏞️', endpoint: 'scenes/custom', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>' },
+            { id: 'upscale', title: 'Upscale', icon: '🔍', endpoint: 'upscales', svg: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg>' }
         ];
+
+        // Render Services
         const grid = document.getElementById('services-grid');
         services.forEach(s => {
-            grid.innerHTML += `<div onclick="promptTask('${s.id}', '${s.title}')" class="bg-[#1e293b] p-3 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer border border-gray-700 active:scale-95 transition-transform"><span class="text-2xl mb-1">${s.icon}</span><h4 class="font-bold text-[11px] leading-tight">${s.title}</h4></div>`;
+            grid.innerHTML += `
+                <div onclick="promptTask('${s.id}', '${s.title}')" class="bg-[#1e293b] p-3 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer border border-gray-700 active:scale-95 transition-transform">
+                    <span class="text-purple-400 mb-2">${s.svg}</span>
+                    <h4 class="font-bold text-[11px] leading-tight">${s.title}</h4>
+                </div>
+            `;
         });
+
+        // Settings Logic
+        function openSettings() {
+            document.getElementById('api-key-input').value = API_KEY;
+            document.getElementById('settings-modal').classList.remove('hidden');
+            document.getElementById('settings-modal').classList.add('flex');
+        }
+        function closeSettings() {
+            document.getElementById('settings-modal').classList.add('hidden');
+            document.getElementById('settings-modal').classList.remove('flex');
+        }
+        function saveSettings() {
+            const val = document.getElementById('api-key-input').value.trim();
+            if(val) {
+                API_KEY = val;
+                localStorage.setItem('viggle_api_key', API_KEY);
+                alert('تم حفظ مفتاح API بنجاح!');
+            }
+            closeSettings();
+        }
+        
+        async function checkBalance() {
+            const key = document.getElementById('api-key-input').value.trim();
+            const display = document.getElementById('balance-display');
+            if(!key) return alert('أدخل الـ API Key أولاً');
+            
+            display.innerText = 'جاري الفحص...';
+            try {
+                const res = await fetch(`${API_BASE}/user`, { headers: { 'Authorization': `Bearer ${key}` } });
+                if(res.ok) {
+                    const data = await res.json();
+                    display.innerText = `الرصيد: ${data.credits || data.balance || 'غير معروف'}`;
+                } else {
+                    display.innerText = 'خطأ في المفتاح';
+                }
+            } catch {
+                display.innerText = 'فشل الاتصال';
+            }
+        }
+
+        // Task Logic
         function promptTask(id, title) {
+            if(!API_KEY) return alert('الرجاء ضبط API Key من الإعدادات أولاً!');
             currentTask = { id, title };
             document.getElementById('input-title').innerText = title;
             document.getElementById('input-prompt').value = '';
@@ -112,16 +208,19 @@
             document.getElementById('input-modal').classList.add('flex');
         }
         function closeInputModal() { document.getElementById('input-modal').classList.add('hidden'); document.getElementById('input-modal').classList.remove('flex'); currentTask = null; }
+        
         async function submitTask() {
             const prompt = document.getElementById('input-prompt').value.trim();
             if(!prompt) return alert('الرجاء إدخال وصف!');
             const taskData = currentTask;
             closeInputModal();
+            
             const taskId = Date.now().toString();
             let tasks = getTasks();
             tasks.unshift({ id: taskId, serviceId: taskData.id, title: taskData.title, prompt: prompt, status: 'pending', createdAt: new Date().toLocaleTimeString('ar-EG'), resultUrl: null });
             saveTasks(tasks);
             alert(`✅ تم إرسال طلبك لـ ${taskData.title}.`);
+            
             try {
                 const serviceInfo = services.find(s => s.id === taskData.id);
                 const formData = new FormData(); formData.append('prompt', prompt); formData.append('quality', 'high');
@@ -130,8 +229,9 @@
                 const data = await res.json();
                 const apiTaskId = data.id || data.task_id;
                 if(apiTaskId) { updateTask(taskId, { apiId: apiTaskId }); pollTaskStatus(taskId, apiTaskId, serviceInfo.endpoint); } else { throw new Error("No Task ID"); }
-            } catch (error) { updateTask(taskId, { status: 'failed' }); alert(`❌ فشل الاتصال.`); }
+            } catch (error) { updateTask(taskId, { status: 'failed' }); alert(`❌ فشل الاتصال. تأكد من الـ API Key.`); }
         }
+
         async function pollTaskStatus(localTaskId, apiTaskId, endpoint) {
             let attempts = 0;
             const interval = setInterval(async () => {
@@ -142,16 +242,22 @@
                 } catch(e) {}
             }, 5000);
         }
+
+        // Storage & UI
         function getTasks() { return JSON.parse(localStorage.getItem('viggle_tasks') || '[]'); }
         function saveTasks(tasks) { localStorage.setItem('viggle_tasks', JSON.stringify(tasks)); }
         function updateTask(id, updates) { let tasks = getTasks(); const idx = tasks.findIndex(t => t.id === id); if(idx > -1) { tasks[idx] = { ...tasks[idx], ...updates }; saveTasks(tasks); } }
+        
         function showProfile() { renderTasks(); document.getElementById('profile-page').classList.remove('hidden'); document.getElementById('profile-page').classList.add('flex'); }
         function hideProfile() { document.getElementById('profile-page').classList.add('hidden'); document.getElementById('profile-page').classList.remove('flex'); }
+        
         function renderTasks() {
             const list = document.getElementById('tasks-list'); const tasks = getTasks();
             if (tasks.length === 0) { list.innerHTML = `<div class="text-center text-gray-500 mt-10">لا توجد مهام حتى الآن.</div>`; return; }
             list.innerHTML = tasks.map(t => `<div class="bg-[#1e293b] p-4 rounded-xl border border-gray-700"><div class="flex justify-between items-start mb-2"><h3 class="font-bold text-sm text-white truncate w-2/3">${t.title}</h3><span class="text-[10px] px-2 py-1 rounded-full ${t.status === 'completed' ? 'bg-green-500/20 text-green-400' : t.status === 'failed' ? 'bg-red-500/20 text-red-400' : 'bg-yellow-500/20 text-yellow-400'}">${t.status === 'completed' ? '✅ مكتمل' : t.status === 'failed' ? '❌ فشل' : '⏳ جاري المعالجة'}</span></div><p class="text-[10px] text-gray-400 mb-3 truncate">${t.prompt}</p>${t.status === 'completed' && t.resultUrl ? `<button onclick="downloadFile('${t.resultUrl}', '${t.title}.mp4')" class="w-full bg-purple-600 hover:bg-purple-500 text-white text-xs py-2 rounded-lg font-bold transition flex justify-center items-center gap-2">تحميل</button>` : t.status === 'failed' ? `<div class="text-[10px] text-red-400">حدث خطأ.</div>` : `<div class="w-full bg-gray-700 h-1 rounded-full overflow-hidden mt-2"><div class="bg-purple-500 h-1 rounded-full animate-pulse" style="width: 100%"></div></div>`}</div>`).join('');
         }
+
+        // Downloader
         let downloadAbortController = null;
         function closeDownloadModal() { document.getElementById('download-modal').classList.add('hidden'); document.getElementById('download-modal').classList.remove('flex'); if (downloadAbortController) { downloadAbortController.abort(); downloadAbortController = null; } }
         async function downloadFile(url, filename) {

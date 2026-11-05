@@ -4,7 +4,7 @@
     <content src="index.html" />
     <preference name="Orientation" value="portrait" />
     <preference name="Fullscreen" value="true" />
-    <preference name="AndroidWindowSplashScreenBackground" value="#0f172a" />
+    <icon src="img/logo.png" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-navigation href="*" />
